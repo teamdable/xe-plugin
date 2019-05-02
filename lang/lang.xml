@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<item name="dable_for_xpressengine">
+		<value xml:lang="ko"><![CDATA[Dable for XpressEngine]]></value>
+		<value xml:lang="en"><![CDATA[Dable for XpressEngine]]></value>
+	</item>
+	<item name="basic_settings">
+		<value xml:lang="ko"><![CDATA[기본 설정]]></value>
+		<value xml:lang="en"><![CDATA[Basics]]></value>
+	</item>
+	<item name="select_boards">
+		<value xml:lang="ko"><![CDATA[게시판 선택]]></value>
+		<value xml:lang="en"><![CDATA[Select bulletins to which widgets apply]]></value>
+	</item>
+	<item name="select_boards_desc">
+		<value xml:lang="ko"><![CDATA[선택된 게시판의 게시물에만 아래의 설정이 적용됩니다.]]></value>
+		<value xml:lang="en"><![CDATA[The settings above apply only to posts on the selected bulletins.]]></value>
+	</item>
+	<item name="content_wrapper">
+		<value xml:lang="ko"><![CDATA[컨텐츠 래퍼]]></value>
+		<value xml:lang="en"><![CDATA[Content Wrapper]]></value>
+	</item>
+	<item name="content_wrapper_desc">
+		<value xml:lang="ko"><![CDATA[<div itemprop="articleBody"> 태그가 콘텐츠를 감쌉니다. 필요하지 않다면 이 설정을 꺼주세요.]]></value>
+		<value xml:lang="en"><![CDATA[Wrap content with <div itemprop="articleBody">. Uncheck if you do not need it.]]></value>
+	</item>
+	<item name="open_graph">
+		<value xml:lang="ko"><![CDATA[Open Graph]]></value>
+		<value xml:lang="en"><![CDATA[Open Graph]]></value>
+	</item>
+	<item name="meta_tags">
+		<value xml:lang="ko"><![CDATA[메타 태그]]></value>
+		<value xml:lang="en"><![CDATA[Meta Tags]]></value>
+	</item>
+	<item name="turn_on_meta_tags">
+		<value xml:lang="ko"><![CDATA[데이블 서비스를 위한 메타 태그를 생성합니다.]]></value>
+		<value xml:lang="en"><![CDATA[Create Open Graph meta tags for Dable service.]]></value>
+	</item>
+	<item name="turn_off_meta_tags">
+		<value xml:lang="ko"><![CDATA[필요하지 않다면 이 설정을 꺼주세요.]]></value>
+		<value xml:lang="en"><![CDATA[Uncheck if you do not need it.]]></value>
+	</item>
+	<item name="widget_script">
+		<value xml:lang="ko"><![CDATA[위젯 스크립트]]></value>
+		<value xml:lang="en"><![CDATA[Widget Script]]></value>
+	</item>
+	<item name="script_type">
+		<value xml:lang="ko"><![CDATA[스크립트 타입]]></value>
+		<value xml:lang="en"><![CDATA[Script Type]]></value>
+	</item>
+	<item name="script_type_responsive">
+		<value xml:lang="ko"><![CDATA[반응형 웹 사이트를 위한 스크립트]]></value>
+		<value xml:lang="en"><![CDATA[Script for responsive web]]></value>
+	</item>
+	<item name="script_type_platform">
+		<value xml:lang="ko"><![CDATA[PC/Mobile 웹 사이트를 위한 스크립트]]></value>
+		<value xml:lang="en"><![CDATA[Script for PC/Mobile web]]></value>
+	</item>
+	<item name="bottom_of_article">
+		<value xml:lang="ko"><![CDATA[본문 하단]]></value>
+		<value xml:lang="en"><![CDATA[Bottom of article]]></value>
+	</item>
+	<item name="bottom_of_article_placeholder">
+		<value xml:lang="ko"><![CDATA[본문 하단에 위젯이 노출됩니다.]]></value>
+		<value xml:lang="en"><![CDATA[This widget is exposed at the bottom of article]]></value>
+	</item>
+	<item name="top_left_of_article">
+		<value xml:lang="ko"><![CDATA[본문 좌측 상단]]></value>
+		<value xml:lang="en"><![CDATA[Top left of article]]></value>
+	</item>
+	<item name="top_left_of_article_placeholder">
+		<value xml:lang="ko"><![CDATA[본문 좌측 상단에 위젯이 노출됩니다.]]></value>
+		<value xml:lang="en"><![CDATA[This widget is exposed in the top-left corner]]></value>
+	</item>
+	<item name="top_right_of_article">
+		<value xml:lang="ko"><![CDATA[본문 우측 상단]]></value>
+		<value xml:lang="en"><![CDATA[Top right of article]]></value>
+	</item>
+	<item name="top_right_of_article_placeholder">
+		<value xml:lang="ko"><![CDATA[본문 우측 상단에 위젯이 노출됩니다.]]></value>
+		<value xml:lang="en"><![CDATA[This widget is exposed in the top-right corner]]></value>
+	</item>
+	<item name="pc_site_label">
+		<value xml:lang="ko"><![CDATA[PC]]></value>
+		<value xml:lang="en"><![CDATA[PC]]></value>
+	</item>
+	<item name="mobile_site_label">
+		<value xml:lang="ko"><![CDATA[Mobile]]></value>
+		<value xml:lang="en"><![CDATA[Mobile]]></value>
+	</item>
+	<item name="pc_site_only">
+		<value xml:lang="ko"><![CDATA[PC 페이지]]></value>
+		<value xml:lang="en"><![CDATA[PC site only]]></value>
+	</item>
+	<item name="mobile_site_only">
+		<value xml:lang="ko"><![CDATA[모바일 페이지]]></value>
+		<value xml:lang="en"><![CDATA[Mobile site only]]></value>
+	</item>
+</lang>

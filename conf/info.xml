@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+	<title xml:lang="ko">Dable</title>
+	<title xml:lang="en">Dable</title>
+	<description xml:lang="ko">검색엔진 최적화</description>
+	<description xml:lang="en">Optimize Search Engine</description>
+	<version>0.9.3</version>
+	<date>2019-05-01</date>
+	<license>GPLv3</license>
+	<author email_address="contact@dable.io" link="http://dable.io">
+		<name xml:lang="ko">Dable</name>
+		<name xml:lang="en">Dable</name>
+	</author>
+</module>

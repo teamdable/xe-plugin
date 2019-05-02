@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants />
+	<permissions />
+	<actions>
+		<action name="dispDableAdminSetting" type="view" menu_name="setting" menu_index="true" admin_index="true" />
+		<action name="procDableAdminSaveSetting" type="controller" />
+	</actions>
+	<menus>
+		<menu name="setting" type="all">
+			<title xml:lang="ko">Dable</title>
+			<title xml:lang="en">Dable</title>
+		</menu>
+	</menus>
+</module>

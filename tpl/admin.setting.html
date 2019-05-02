@@ -1,0 +1,174 @@
+<include target="admin.header.html" />
+
+<form action="./" class="x_form-horizontal" ruleset="saveSetting" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="module" value="dable" />
+	<input type="hidden" name="act" value="procDableAdminSaveSetting" />
+	<input type="hidden" name="success_return_url" value="{getUrl('act', $act)}" />
+
+	{@ $use_multilang = true}
+	<section class="section default">
+		<h1>{$lang->basic_settings}</h1>
+		<div class="x_control-group">
+			<label class="x_control-label">{$lang->select_boards}</label>
+			<div class="x_controls">
+				<div class="dable-boards">
+					<div class="dable-boards__item" loop="$board_list => $idx,$board">
+						<input type="checkbox" name="boards[]" id="board-{$idx}" value="{$board->mid}" checked="checked"|cond="$board->selected"><label for="board-{$idx}">{$board->browser_title}</label>
+					</div>
+				</div>
+				<p>{$lang->select_boards_desc}</p>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="use_content_wrapper">{$lang->content_wrapper}</label>
+			<div class="x_controls">
+				<label>
+					<input type="checkbox" name="use_content_wrapper" id="use_content_wrapper" value="Y" checked="checked"|cond="$config->use_content_wrapper === 'Y'" />
+					{$lang->content_wrapper_desc}
+				</label>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<h1>{$lang->open_graph}</h1>
+		<div class="x_control-group">
+			<label for="turn_on_meta_tags" class="x_control-label">{$lang->meta_tags}</label>
+			<div class="x_controls">
+				<label><input type="radio" name="use_meta_tags" id="turn_on_meta_tags" value="Y" checked="checked"|cond="$config->use_meta_tags === 'Y'" /> {$lang->turn_on_meta_tags}</label>
+				<label><input type="radio" name="use_meta_tags" id="turn_off_meta_tags" value="N" checked="checked"|cond="$config->use_meta_tags !== 'Y'" /> {$lang->turn_off_meta_tags}</label>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<h1>{$lang->widget_script}</h1>
+		<div class="x_control-group">
+			<label class="x_control-label" for="ga_id">{$lang->script_type}</label>
+			<div class="x_controls">
+				<label><input type="radio" name="script_type" id="script_type_responsive" value="responsive" checked="checked"|cond="$config->script_type === 'responsive'" /> {$lang->script_type_responsive}</label>
+				<label><input type="radio" name="script_type" id="script_type_platform" value="platform" checked="checked"|cond="$config->script_type === 'platform'" /> {$lang->script_type_platform}</label>
+			</div>
+		</div>
+		<div class="x_control-group codeblock responsive" style="display:none"|cond="$config->script_type !== 'responsive'">
+			<label class="x_control-label"></label>
+			<div class="x_controls">
+				<label for="article_bottom">
+					<input type="checkbox" name="article_bottom" id="article_bottom" value="Y" checked="checked"|cond="$config->article_bottom === 'Y'" />
+					{$lang->bottom_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="article_bottom_code" style="width:98%" placeholder="{$lang->bottom_of_article_placeholder}">{$config->article_bottom_code}</textarea>
+			</div>
+			<div class="x_controls">
+				<label for="article_top_left">
+					<input type="checkbox" name="article_top_left" id="article_top_left" value="Y" checked="checked"|cond="$config->article_top_left === 'Y'" />
+					{$lang->top_left_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="article_top_left_code" style="width:98%" placeholder="{$lang->top_left_of_article_placeholder}">{$config->article_top_left_code}</textarea>
+			</div>
+			<div class="x_controls">
+				<label for="article_top_right">
+					<input type="checkbox" name="article_top_right" id="article_top_right" value="Y" checked="checked"|cond="$config->article_top_right === 'Y'" />
+					{$lang->top_right_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="article_top_right_code" style="width:98%" placeholder="{$lang->top_right_of_article_placeholder}">{$config->article_top_right_code}</textarea>
+			</div>
+		</div>
+		<div class="x_control-group codeblock platform" style="display:none"|cond="$config->script_type !== 'platform'">
+			<label class="x_control-label"></label>
+			<div class="x_controls">
+				<label for="pc_article_bottom">
+					<input type="checkbox" name="pc_article_bottom" id="pc_article_bottom" value="Y" checked="checked"|cond="$config->pc_article_bottom === 'Y'" />
+					<span class="dable-platform-label">{$lang->pc_site_label}</span>
+					{$lang->bottom_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="pc_article_bottom_code" style="width:98%" placeholder="{$lang->bottom_of_article_placeholder} ({$lang->pc_site_only})">{$config->pc_article_bottom_code}</textarea>
+			</div>
+			<div class="x_controls">
+				<label for="pc_article_top_left">
+					<input type="checkbox" name="pc_article_top_left" id="pc_article_top_left" value="Y" checked="checked"|cond="$config->pc_article_top_left === 'Y'" />
+					<span class="dable-platform-label">{$lang->pc_site_label}</span>
+					{$lang->top_left_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="pc_article_top_left_code" style="width:98%" placeholder="{$lang->top_left_of_article_placeholder} ({$lang->pc_site_only})">{$config->pc_article_top_left_code}</textarea>
+			</div>
+			<div class="x_controls">
+				<label for="pc_article_top_right">
+					<input type="checkbox" name="pc_article_top_right" id="pc_article_top_right" value="Y" checked="checked"|cond="$config->pc_article_top_right === 'Y'" />
+					<span class="dable-platform-label">{$lang->pc_site_label}</span>
+					{$lang->top_right_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="pc_article_top_right_code" style="width:98%" placeholder="{$lang->top_right_of_article_placeholder} ({$lang->pc_site_only})">{$config->pc_article_top_right_code}</textarea>
+			</div>
+			<div class="x_controls">
+				<label for="mobile_article_bottom">
+					<input type="checkbox" name="mobile_article_bottom" id="mobile_article_bottom" value="Y" checked="checked"|cond="$config->mobile_article_bottom === 'Y'" />
+					<span class="dable-platform-label">{$lang->mobile_site_label}</span>
+					{$lang->bottom_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="mobile_article_bottom_code" style="width:98%" placeholder="{$lang->bottom_of_article_placeholder} ({$lang->mobile_site_only})">{$config->mobile_article_bottom_code}</textarea>
+			</div>
+			<div class="x_controls">
+				<label for="mobile_article_top_left">
+					<input type="checkbox" name="mobile_article_top_left" id="mobile_article_top_left" value="Y" checked="checked"|cond="$config->mobile_article_top_left === 'Y'" />
+					<span class="dable-platform-label">{$lang->mobile_site_label}</span>
+					{$lang->top_left_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="mobile_article_top_left_code" style="width:98%" placeholder="{$lang->top_left_of_article_placeholder} ({$lang->mobile_site_only})">{$config->mobile_article_top_left_code}</textarea>
+			</div>
+			<div class="x_controls">
+				<label for="mobile_article_top_right">
+					<input type="checkbox" name="mobile_article_top_right" id="mobile_article_top_right" value="Y" checked="checked"|cond="$config->mobile_article_top_right === 'Y'" />
+					<span class="dable-platform-label">{$lang->mobile_site_label}</span>
+					{$lang->top_right_of_article}
+				</label>
+				<textarea rows="4" cols="42" name="mobile_article_top_right_code" style="width:98%" placeholder="{$lang->top_right_of_article_placeholder} ({$lang->mobile_site_only})">{$config->mobile_article_top_right_code}</textarea>
+			</div>
+		</div>
+	</section>
+
+	<div class="x_clearfix btnArea">
+		<div class="x_pull-right">
+			<button class="x_btn x_btn-primary" type="submit">{$lang->cmd_save}</button>
+		</div>
+	</div>
+</form>
+
+<script>
+jQuery(function($){
+	$('input[name="script_type"]').click(function(){
+		$('.codeblock').hide().filter('.' + this.value).show();
+	});
+});
+</script>
+
+<style>
+label.service_name {
+	position: relative;
+}
+label.service_name input[type="text"] {
+	padding-left: 5em;
+}
+.dable-input-tag {
+	position: absolute;
+	left: 5px;
+	top: 7px;
+	font-size: 11px;
+	padding: 2px 3px;
+	color: #999;
+}
+.dable-boards {
+	width: 260px;
+	max-width: 98%;
+	height: 300px;
+	border: 1px solid #ddd;
+	padding: 16px;
+}
+.dable-boards__item label {
+	display: inline-block;
+	margin-left: 13px;
+}
+</style>
+
+<include target="../../module/tpl/include.multilang.html" />
+<include target="../../module/tpl/include.multilang.textarea.html" />
