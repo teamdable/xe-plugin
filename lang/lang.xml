@@ -97,12 +97,12 @@
 		<value xml:lang="en"><![CDATA[Mobile site only]]></value>
 	</item>
 	<item name="banner_copy_1">
-		<value xml:lang="ko"><![CDATA[유저의 체류시간 상승을 위해 사이트 운영자가 주목한 방법,]]></value>
-		<value xml:lang="en"><![CDATA[유저의 체류시간 상승을 위해 사이트 운영자가 주목한 방법,]]></value>
+		<value xml:lang="ko"><![CDATA[유저의 이탈 방지를 위해 사이트 운영자가 주목한 방법,]]></value>
+		<value xml:lang="en"><![CDATA[What is the most effective way to keep user in your site?]]></value>
 	</item>
 	<item name="banner_copy_2">
-		<value xml:lang="ko"><![CDATA[개인화 추천 서비스를 무료로 이용하세요!]]></value>
-		<value xml:lang="en"><![CDATA[개인화 추천 서비스를 무료로 이용하세요!]]></value>
+		<value xml:lang="ko"><![CDATA[개인화 추천 서비스를 무료로 이용하시면서, 네이티브 광고를 통해 수익도 얻어가세요!]]></value>
+		<value xml:lang="en"><![CDATA[Use personalized content recommendation service for free and Earn revenue through native ads!]]></value>
 	</item>
 	<item name="banner_cta_signup">
 		<value xml:lang="ko"><![CDATA[무료로 이용하기]]></value>
@@ -110,6 +110,6 @@
 	</item>
 	<item name="banner_cta_learn_more">
 		<value xml:lang="ko"><![CDATA[더 알아보기]]></value>
-		<value xml:lang="ko"><![CDATA[Learn more]]></value>
+		<value xml:lang="en"><![CDATA[Learn more]]></value>
 	</item>
 </lang>
