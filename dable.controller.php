@@ -18,7 +18,7 @@ class dableController extends dable {
 		$oDocument = Context::get('oDocument');
 
 		// Content wrapper
-		if ($config->use_content_wrapper === 'Y' && $index !== false) {
+		if ($oDocument && $config->use_content_wrapper === 'Y' && $index !== false) {
 			$needle = sprintf('<!--BeforeDocument(%d,%d)--><div ', $oDocument->get('document_srl'), $oDocument->get('member_srl'));
 			$index = strpos($output, $needle);
 
@@ -71,7 +71,7 @@ class dableController extends dable {
 
 		// bottom
 		$key_bt = $platform . 'article_bottom';
-		if ($config->{$key_bt} === 'Y' && $config->{$key_bt . '_code'}) {
+		if ($oDocument && $config->{$key_bt} === 'Y' && $config->{$key_bt . '_code'}) {
 			$needle = sprintf('</div><!--AfterDocument(%d,%d)-->', $oDocument->get('document_srl'), $oDocument->get('member_srl'));
 			$index = strpos($output, $needle, $offset);
 			if ($index !== false) {
@@ -89,12 +89,14 @@ class dableController extends dable {
 	function printMetaTagsForSEO() {
 		$oDocument = Context::get('oDocument');
 
-		$excerpt = trim(str_replace('&nbsp;', ' ', $oDocument->getContentText(400)));
+		if ($oDocument) {
+			$excerpt = trim(str_replace('&nbsp;', ' ', $oDocument->getContentText(400)));
 
-		$this->addMetaTag('og:url', $oDocument->getPermanentUrl());
-		$this->addMetaTag('og:title', htmlspecialchars($oDocument->getTitleText()));
-		$this->addMetaTag('og:description', htmlspecialchars($excerpt));
-		$this->addMetaTag('article:published_time', $oDocument->getRegdate('c'));
-		$this->addMetaTag('article:modified_time', $oDocument->getUpdate('c'));
+			$this->addMetaTag('og:url', $oDocument->getPermanentUrl());
+			$this->addMetaTag('og:title', htmlspecialchars($oDocument->getTitleText()));
+			$this->addMetaTag('og:description', htmlspecialchars($excerpt));
+			$this->addMetaTag('article:published_time', $oDocument->getRegdate('c'));
+			$this->addMetaTag('article:modified_time', $oDocument->getUpdate('c'));
+		}
 	}
 }
